@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gate Pass Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #3e473e;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+        text-align: center;
+    }
+    form {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    label,
+    input,
+    select,
+    textarea {
+        width: 100%;
+    }
+    /* Adjusting specific elements */
+    label[for="pdf_file"],
+    input[type="file"],
+    input[type="submit"] {
+        grid-column: span 2;
+    }
+    textarea {
+        height: 100px;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Oil And Gas Cooperation</h1>
+    <h2>Gate Pass Form</h2>
+
+    <form action="process_gate_pass.php" method="post" enctype="multipart/form-data">
+        <label for="gate_pass_no">Gate Pass No:</label>
+        <input type="text" id="gate_pass_no" name="gate_pass_no" required>
+        
+        <label for="serial_no">Serial No:</label>
+        <input type="text" id="serial_no" name="serial_no" required>
+        
+        <label for="description">Description of Materials:</label>
+        <input type="text" id="description" name="description" required>
+
+        <label for="vehicle_no">Vehicle No:</label>
+        <input type="text" id="vehicle_no" name="vehicle_no" required>
+        
+        <label for="quantity">Qty. (MT):</label>
+        <input type="number" id="quantity" name="quantity" required>
+        
+        <label for="accompanying_persons">Name of Persons Accompanying Materials:</label>
+        <input type="text" id="accompanying_persons" name="accompanying_persons" required>
+
+        <label for="issuing_department">Issuing Department:</label>
+        <input type="text" id="issuing_department" name="issuing_department" required>
+
+        <label for="issued_to_whom">Issued To Whom:</label>
+        <input type="text" id="issued_to_whom" name="issued_to_whom" required>
+
+        <label for="issued_to_where">Issued To Where:</label>
+        <input type="text" id="issued_to_where" name="issued_to_where" required>
+
+        <label for="purpose">Purpose:</label>
+        <input type="text" id="purpose" name="purpose" required>
+        
+        <label for="time_out">Time Out:</label>
+        <input type="text" id="time_out" name="time_out" required>
+        
+        <label for="security_check">Security Check (Name):</label>
+        <input type="text" id="security_check" name="security_check" required>
+        
+        <label for="remarks">Remarks:</label>
+        <textarea id="remarks" name="remarks"></textarea> 
+
+        <label for="issuing_official">Name & Designation of Issuing Official:</label>
+        <input type="text" id="issuing_official" name="issuing_official" required>
+        
+        <label for="superior_officer">Name & Designation of Superior Officer:</label>
+        <input type="text" id="superior_officer" name="superior_officer" required>
+        
+        <label for="project_coordinator">Project Coordinator:</label>
+        <input type="text" id="project_coordinator" name="project_coordinator" required>
+       
+        <label for="returnable">Returnable/Non-Returnable:</label>
+        <select id="returnable" name="returnable" required>
+            <option value="returnable">Returnable</option>
+            <option value="non-returnable">Non-Returnable</option>
+        </select>
+        
+        <label for="pdf_file">Attach PDF File:</label>
+        <input type="file" id="pdf_file" name="pdf_file">
+        
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>Search Gate Pass Details</h2>
+    <form action="process_gate_pass.php" method="get">
+        <label for="gate_pass_no">Enter Gate Pass No:</label>
+        <input type="text" id="gate_pass_no" name="gate_pass_no" required>
+        <input type="submit" value="Search">
+    </form>
+</div>
+</body>
+</html>
+
+
+   
